@@ -7,9 +7,9 @@
         public  int qMoves { get; set; }
         public Table table { get; set; }
 
-        public Piece(Position position, Table table, Color color) 
+        public Piece(Table table, Color color) 
         {
-            this.position = position;
+            this.position = null;
             this.table = table;
             this.color = color;
             this.qMoves = 0;

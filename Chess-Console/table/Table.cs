@@ -19,5 +19,42 @@ namespace table
         {
             return pieces[lines, columns];
         }
+
+        public Piece piece(Position pos)
+        {
+            return piece(pos.lin, pos.col);
+        }
+
+        public bool isPiece(Position pos)
+        {
+            isPositionValid(pos);
+            return piece(pos) != null;
+        }
+
+        public void PutPiece(Piece p, Position pos)
+        {
+            pieces[pos.lin, pos.col] = p;
+            p.position = pos;
+        }
+
+        public bool isPositionValid(Position pos)
+        {
+            if (pos.lin <0 || pos.lin >= lines || pos.col <0 || pos.col >= columns)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public void msgPosInvalid(Position pos)
+        {
+            if (!isPositionValid(pos))
+            {
+                throw new TableException("Invalid Position!");
+            }
+        }
     }
 }
