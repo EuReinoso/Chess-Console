@@ -11,9 +11,10 @@ namespace Chess_Console
             {
                 Table table = new Table(8, 8);
 
-                table.PutPiece(new King(table, Color.White), new Position(0, 4));
-                table.PutPiece(new Tower(table, Color.White), new Position(0, 0));
-                table.PutPiece(new King(table, Color.White), new Position(9, 0));
+                ChessPosition pos = new ChessPosition('a', 1);
+
+                Console.WriteLine(pos);
+                Console.WriteLine(pos.toPosition());
 
                 Window.showTable(table);
 

@@ -31,7 +31,7 @@ namespace table
             return piece(pos) != null;
         }
 
-        public void PutPiece(Piece p, Position pos)
+        public void putPiece(Piece p, Position pos)
         {
             if (isPiece(pos))
             {
