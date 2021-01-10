@@ -27,12 +27,16 @@ namespace table
 
         public bool isPiece(Position pos)
         {
-            isPositionValid(pos);
+            msgPosInvalid(pos);
             return piece(pos) != null;
         }
 
         public void PutPiece(Piece p, Position pos)
         {
+            if (isPiece(pos))
+            {
+                throw new TableException("Already have a Piece here!");
+            }
             pieces[pos.lin, pos.col] = p;
             p.position = pos;
         }
