@@ -11,13 +11,17 @@ namespace Chess_Console
             {
                 Table table = new Table(8, 8);
 
-                ChessPosition pos = new ChessPosition('a', 1);
+                //black
+                table.putPiece(new King(table, Color.Black) , new Position (0, 4));
+                table.putPiece(new Tower(table, Color.Black), new Position(0, 0));
+                table.putPiece(new Tower(table, Color.Black), new Position(0, 7));
 
-                Console.WriteLine(pos);
-                Console.WriteLine(pos.toPosition());
+                //white
+                table.putPiece(new King(table, Color.White), new Position(7, 4));
+                table.putPiece(new Tower(table, Color.White), new Position(7, 7));
+                table.putPiece(new Tower(table, Color.White), new Position(7, 0));
 
                 Window.showTable(table);
-
             }
             catch (TableException e)
             {
