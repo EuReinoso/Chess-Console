@@ -41,6 +41,18 @@ namespace table
             p.position = pos;
         }
 
+        public Piece removePiece(Position pos)
+        {
+            if (piece(pos) == null)
+            {
+                return null;
+            }
+            Piece aux = piece(pos);
+            aux.position = null;
+            pieces[pos.lin, pos.col] = null;
+            return aux;
+        }
+
         public bool isPositionValid(Position pos)
         {
             if (pos.lin <0 || pos.lin >= lines || pos.col <0 || pos.col >= columns)

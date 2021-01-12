@@ -14,5 +14,10 @@
             this.color = color;
             this.qMoves = 0;
         }
+
+        public void incrementMoves()
+        {
+            qMoves++;
+        }
     }
 }

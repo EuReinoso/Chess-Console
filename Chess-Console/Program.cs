@@ -7,27 +7,30 @@ namespace Chess_Console
     {
         static void Main(string[] args)
         {
+
+            
             try
             {
-                Table table = new Table(8, 8);
+                ChessGame match = new ChessGame();
 
-                //black
-                table.putPiece(new King(table, Color.Black) , new Position (0, 4));
-                table.putPiece(new Tower(table, Color.Black), new Position(0, 0));
-                table.putPiece(new Tower(table, Color.Black), new Position(0, 7));
+              
 
-                //white
-                table.putPiece(new King(table, Color.White), new Position(7, 4));
-                table.putPiece(new Tower(table, Color.White), new Position(7, 7));
-                table.putPiece(new Tower(table, Color.White), new Position(7, 0));
-
-                Window.showTable(table);
+                Window.showTable(match.tab);
             }
             catch (TableException e)
             {
                 Console.WriteLine(e.Message);
             }
+
+            ChessPosition pos = new ChessPosition('c', 5);
+
+            Console.WriteLine(pos);
+            Console.WriteLine(pos.toPosition());
+
             Console.ReadLine();
-        }
+        
+        
+        }   
+
     }
 }
