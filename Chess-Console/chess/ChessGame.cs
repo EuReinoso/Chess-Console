@@ -9,12 +9,14 @@ namespace chess
         public Table tab { get; set; }
         private int shift;
         private Color player;
+        public bool endgame { get; private set; }
         
         public ChessGame()
         {
             tab = new Table(8, 8);
             shift = 1;
             player = Color.White;
+            putPieces();
         }
 
         public void movePiece(Position initPos, Position finalPos)
@@ -28,7 +30,7 @@ namespace chess
         private void putPieces()
         {
             //black
-            tab.putPiece(new King(tab, Color.Black), new ChessPosition('e', 8).toPosition());
+            tab.putPiece(new King(tab, Color.Black), new ChessPosition('e',8).toPosition());
             tab.putPiece(new Tower(tab, Color.Black), new ChessPosition('a', 8).toPosition());
             tab.putPiece(new Tower(tab, Color.Black), new ChessPosition('h',8).toPosition());
 

@@ -13,19 +13,32 @@ namespace Chess_Console
             {
                 ChessGame match = new ChessGame();
 
-              
+                while (!match.endgame)
+                {
 
-                Window.showTable(match.tab);
+                    Console.Clear();
+                    Window.showTable(match.tab);
+
+                    Console.WriteLine();
+                    Console.WriteLine("Select Piece: ");
+                    Position piece = Window.readChessPosition().toPosition();
+
+                    Console.WriteLine("Square: ");
+                    Position square = Window.readChessPosition().toPosition();
+
+                    match.movePiece(piece, square);
+
+
+                }
+              
+                
+
+               
             }
             catch (TableException e)
             {
                 Console.WriteLine(e.Message);
             }
-
-            ChessPosition pos = new ChessPosition('c', 5);
-
-            Console.WriteLine(pos);
-            Console.WriteLine(pos.toPosition());
 
             Console.ReadLine();
         
