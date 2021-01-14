@@ -10,5 +10,11 @@
             this.lin = lin;
             this.col = col;
         }
+
+        public void setVal(int lin, int col)
+        {
+            this.lin = lin;
+            this.col = col;
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace table
 {
-    class Piece
+    abstract class Piece
     {
         public Color color { get; set; }
         public Position position { get; set; }
@@ -20,8 +20,8 @@
             qMoves++;
         }
 
-       
-        
+        public abstract bool[,] possibleMoves();
+           
 
         
     }
