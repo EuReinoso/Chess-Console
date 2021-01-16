@@ -23,6 +23,12 @@ namespace Chess_Console
                     Console.WriteLine("Select Piece: ");
                     Position piece = Window.readChessPosition().toPosition();
 
+                    
+                    bool[,] possiblePos = match.tab.piece(piece).possibleMoves();
+
+                    Console.Clear();
+                    Window.showTable(match.tab,possiblePos);
+
                     Console.WriteLine("Square: ");
                     Position square = Window.readChessPosition().toPosition();
 
