@@ -20,6 +20,24 @@
             qMoves++;
         }
 
+        public bool haveMoves()
+        {
+            bool[,] mat = possibleMoves();
+            
+            for ( int i = 0; i < table.lines; i++)
+            {
+                for (int j = 0; j < table.columns; j++)
+                {
+                    if (mat[i,j]) 
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         public abstract bool[,] possibleMoves();
            
 
