@@ -37,6 +37,7 @@ namespace Chess_Console
 
                         Console.WriteLine("Square: ");
                         Position square = Window.readChessPosition().toPosition();
+                        match.validSquarePos(piece,square);
 
                         match.movePiece(piece, square);
 

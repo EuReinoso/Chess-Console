@@ -51,6 +51,14 @@ namespace chess
 
         }
 
+        public void validSquarePos(Position piece, Position square)
+        {
+            if (!tab.piece(piece).canMoveTo(square))
+            {
+                throw new TableException("Invalid square!");
+            }
+        }
+
         private void changeColor()
         {
             if (player == Color.White)
