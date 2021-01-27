@@ -1,11 +1,45 @@
 ﻿using System;
 using table;
 using chess;
+using System.Collections.Generic;
 
 namespace Chess_Console
 {
     class Window
     {
+        public  static void printMatch(ChessGame match)
+        {
+            showTable(match.tab);
+
+            Console.WriteLine();
+            printCapturedPieces(match);
+            Console.WriteLine("Turn: " + match.turn);
+            Console.WriteLine();
+            Console.WriteLine("Waiting " + match.player + " move!");
+        }
+
+        public static void printCapturedPieces(ChessGame match)
+        {
+            Console.WriteLine("Captured Pieces");
+            Console.Write("White: ");
+            printSet(match.capturedPieces(Color.White));
+            Console.WriteLine();
+            Console.Write("Black: ");
+            printSet(match.capturedPieces(Color.Black));
+            Console.WriteLine();
+            
+        }
+
+        public static void printSet(HashSet<Piece> set)
+        {
+            Console.Write("[");
+            foreach(Piece x in set)
+            {
+                Console.Write(x + " ");
+            }
+            Console.Write("]");
+        }
+
         public static void showTable(Table tab)
         {
             int squareColor = new int();

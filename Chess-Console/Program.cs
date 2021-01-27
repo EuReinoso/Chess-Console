@@ -18,11 +18,9 @@ namespace Chess_Console
                     try
                     {
                         Console.Clear();
-                        Window.showTable(match.tab);
+                        Window.printMatch(match);
 
-                        Console.WriteLine();
-                        Console.WriteLine("Turn: " + match.turn);
-                        Console.WriteLine(match.player);
+                       
 
                         Console.WriteLine();
                         Console.WriteLine("Select Piece: ");
@@ -39,7 +37,7 @@ namespace Chess_Console
                         Position square = Window.readChessPosition().toPosition();
                         match.validSquarePos(piece,square);
 
-                        match.movePiece(piece, square);
+                        match.makeMove(piece, square);
 
                     }
                     catch(TableException e)

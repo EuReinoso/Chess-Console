@@ -37,6 +37,7 @@ namespace chess
 
         public void makeMove(Position piece, Position square)
         {
+
             movePiece(piece, square);
             turn++;
             changeColor();
